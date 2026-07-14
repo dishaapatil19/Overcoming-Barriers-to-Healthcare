@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhyNot? | Overcoming Barriers to Healthcare</title>
+    <meta name="description" content="Many people delay medical help due to fear, cost, time, or stigma. WhyNot? uses behavioral science to help you understand your barriers and take action.">
+    <!-- Google Fonts: Outfit and Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="healthcss.css">
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo" id="nav-logo">
+                <span class="logo-icon">?</span>
+                <span class="logo-text">Why<span class="highlight">Not?</span></span>
+            </a>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#problem" class="nav-link">The Barriers</a>
+                <a href="#quiz" class="nav-link">Discovery Quiz</a>
+                <a href="#simulator" class="nav-link">Impact Simulator</a>
+                <a href="#companion" class="nav-link">Chat Companion</a>
+                <a href="#excuses" class="nav-link">Excuse Wall</a>
+                <a href="#challenge" class="nav-link">Daily Challenge</a>
+            </nav>
+            <div class="nav-actions">
+                <div class="courage-badge" id="courage-badge">
+                    <i data-lucide="award" class="badge-icon"></i>
+                    <span class="points-val" id="nav-courage-points">0</span>
+                    <span class="points-lbl">Points</span>
+                </div>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <div class="tagline-badge">BEHAVIORAL HEALTHCARE INITIATIVE</div>
+                    <h1 class="hero-title">What's stopping you from taking care of your health today?</h1>
+                    <p class="hero-subtitle">Millions delay seeking help not because healthcare is unavailable, but because fear, uncertainty, cost concerns, stigma, and hesitation stand in the way.</p>
+                    <div class="hero-actions">
+                        <a href="#quiz" class="btn btn-primary" id="hero-cta-primary">Start Your 5-Minute Health Journey</a>
+                        <a href="#problem" class="btn btn-secondary" id="hero-cta-secondary">Learn More</a>
+                    </div>
+                    <div class="hero-trust">
+                        <div class="trust-avatars">
+                            <span class="trust-avatar" style="background-color: #4ECDC4;">🙋‍♂️</span>
+                            <span class="trust-avatar" style="background-color: #5B8DEF;">👩‍⚕️</span>
+                            <span class="trust-avatar" style="background-color: #FFD166;">👨‍💻</span>
+                            <span class="trust-avatar" style="background-color: #95D5B2;">👩‍🦰</span>
+                        </div>
+                        <p class="trust-text">Join thousands of others in addressing their healthcare barriers.</p>
+                    </div>
+                </div>
+                <div class="hero-media">
+                    <!-- Premium Custom SVG Illustration -->
+                    <svg class="hero-svg" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="circleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#EEF2F5" />
+                                <stop offset="100%" stop-color="#F8F9FA" />
+                            </linearGradient>
+                            <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#4ECDC4" />
+                                <stop offset="100%" stop-color="#3bb2a9" />
+                            </linearGradient>
+                            <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#5B8DEF" />
+                                <stop offset="100%" stop-color="#3d70d6" />
+                            </linearGradient>
+                            <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+                                <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#5B8DEF" flood-opacity="0.15" />
+                            </filter>
+                        </defs>
+                        <!-- Background Circle -->
+                        <circle cx="250" cy="250" r="210" fill="url(#circleGrad)" />
+                        <circle cx="250" cy="250" r="160" stroke="#EEF2F5" stroke-width="2" stroke-dasharray="8 8" />
+                        
+                        <!-- Floating Barrier Bubbles with Text -->
+                        <!-- Fear -->
+                        <g class="float-bubble fb-1" filter="url(#shadow)">
+                            <rect x="70" y="80" width="130" height="42" rx="21" fill="#FFFFFF" />
+                            <circle cx="91" cy="101" r="13" fill="#FFE5E5" />
+                            <text x="91" y="105" text-anchor="middle" font-size="12" fill="#E84A5F" font-weight="bold">😰</text>
+                            <text x="114" y="106" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#2D3436">Fear of Results</text>
+                        </g>
+                        <!-- Cost -->
+                        <g class="float-bubble fb-2" filter="url(#shadow)">
+                            <rect x="300" y="120" width="135" height="42" rx="21" fill="#FFFFFF" />
+                            <circle cx="321" cy="141" r="13" fill="#FFF8E7" />
+                            <text x="321" y="145" text-anchor="middle" font-size="12" fill="#FFB400" font-weight="bold">💵</text>
+                            <text x="344" y="146" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#2D3436">Cost Concerns</text>
+                        </g>
+                        <!-- Stigma -->
+                        <g class="float-bubble fb-3" filter="url(#shadow)">
+                            <rect x="40" y="280" width="120" height="42" rx="21" fill="#FFFFFF" />
+                            <circle cx="61" cy="301" r="13" fill="#E8F4FD" />
+                            <text x="61" y="305" text-anchor="middle" font-size="12" fill="#5B8DEF" font-weight="bold">👥</text>
+                            <text x="84" y="306" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#2D3436">Social Stigma</text>
+                        </g>
+                        <!-- Time -->
+                        <g class="float-bubble fb-4" filter="url(#shadow)">
+                            <rect x="310" y="310" width="125" height="42" rx="21" fill="#FFFFFF" />
+                            <circle cx="331" cy="331" r="13" fill="#E6F9F2" />
+                            <text x="331" y="335" text-anchor="middle" font-size="12" fill="#4ECDC4" font-weight="bold">⏱️</text>
+                            <text x="354" y="336" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#2D3436">Lack of Time</text>
+                        </g>
+                        
+                        <!-- Illustration Character (Empathetic depiction of a person looking at choice paths) -->
+                        <g transform="translate(180, 180)">
+                            <!-- Ground shadow -->
+                            <ellipse cx="70" cy="180" rx="60" ry="12" fill="#E2E8F0" />
+                            
+                            <!-- Person body -->
+                            <rect x="55" y="100" width="30" height="60" rx="15" fill="url(#blueGrad)" />
+                            
+                            <!-- Head -->
+                            <circle cx="70" cy="80" r="18" fill="#FFD166" />
+                            
+                            <!-- Sitting arms/knees (Thoughtful Pose) -->
+                            <path d="M50 110 C 40 120, 40 140, 60 145" stroke="#E2E8F0" stroke-width="4" stroke-linecap="round" fill="none" />
+                            <path d="M90 110 C 100 120, 100 140, 80 145" stroke="#E2E8F0" stroke-width="4" stroke-linecap="round" fill="none" />
+                            
+                            <!-- Question mark bubble above head -->
+                            <g class="glow-pulse">
+                                <circle cx="100" cy="50" r="16" fill="url(#tealGrad)" />
+                                <text x="100" y="55" text-anchor="middle" font-family="'Outfit', sans-serif" font-weight="bold" font-size="16" fill="#FFFFFF">?</text>
+                            </g>
+                            <!-- Line showing thought connection -->
+                            <path d="M80 68 C 85 62, 90 62, 92 58" stroke="#4ECDC4" stroke-width="2" stroke-dasharray="3 3" fill="none" />
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </section>
+        <!-- Problem Visualization Section -->
+        <section id="problem" class="problem-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">THE ROOT CAUSE</span>
+                    <h2 class="section-title">Healthcare Isn't Always the Problem</h2>
+                    <p class="section-desc">Access to clinics and doctors is wider than ever. Yet, deep internal and cultural barriers hold us back from taking action. Select a card below to understand why.</p>
+                </div>
+                <div class="problem-grid">
+                    <!-- Card 1 -->
+                    <div class="barrier-card" data-barrier="fear">
+                        <div class="barrier-icon-wrapper fear-theme">
+                            <i data-lucide="shield-alert"></i>
+                        </div>
+                        <h3 class="barrier-card-title">Fear of Diagnosis</h3>
+                        <p class="barrier-card-summary">"If I don't know, it's not real." The dread of bad news makes avoidance feel like protection.</p>
+                        <span class="barrier-card-action">Understand Barrier <i data-lucide="arrow-right"></i></span>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="barrier-card" data-barrier="stigma">
+                        <div class="barrier-icon-wrapper stigma-theme">
+                            <i data-lucide="users"></i>
+                        </div>
+                        <h3 class="barrier-card-title">Social Stigma</h3>
+                        <p class="barrier-card-summary">"What will they think of me?" Worrying that seeking therapy or medical aid labels you as weak.</p>
+                        <span class="barrier-card-action">Understand Barrier <i data-lucide="arrow-right"></i></span>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="barrier-card" data-barrier="cost">
+                        <div class="barrier-icon-wrapper cost-theme">
+                            <i data-lucide="dollar-sign"></i>
+                        </div>
+                        <h3 class="barrier-card-title">Cost Concerns</h3>
+                        <p class="barrier-card-summary">"Can I afford this?" High deductible plans and obscure billing structures provoke intense anxiety.</p>
+                        <span class="barrier-card-action">Understand Barrier <i data-lucide="arrow-right"></i></span>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="barrier-card" data-barrier="time">
+                        <div class="barrier-icon-wrapper time-theme">
+                            <i data-lucide="clock"></i>
+                        </div>
+                        <h3 class="barrier-card-title">Lack of Time</h3>
+                        <p class="barrier-card-summary">"I'll go next week." Working shifts, family duty, and complex scheduling push care to the bottom.</p>
+                        <span class="barrier-card-action">Understand Barrier <i data-lucide="arrow-right"></i></span>
+                    </div>
+                    <!-- Card 5 -->
+                    <div class="barrier-card" data-barrier="uncertainty">
+                        <div class="barrier-icon-wrapper uncertainty-theme">
+                            <i data-lucide="help-circle"></i>
+                        </div>
+                        <h3 class="barrier-card-title">Denial & Uncertainty</h3>
+                        <p class="barrier-card-summary">"It's just minor stress." Convincing yourself that serious symptoms will resolve on their own.</p>
+                        <span class="barrier-card-action">Understand Barrier <i data-lucide="arrow-right"></i></span>
+                    </div>
+                    <!-- Card 6 -->
+                    <div class="barrier-card" data-barrier="norms">
+                        <div class="barrier-icon-wrapper norms-theme">
+                            <i data-lucide="shield"></i>
+                        </div>
+                        <h3 class="barrier-card-title">Masculinity Norms</h3>
+                        <p class="barrier-card-summary">"I have to power through." Societal expectations to display absolute invulnerability and resist care.</p>
+                        <span class="barrier-card-action">Understand Barrier <i data-lucide="arrow-right"></i></span>
+                    </div>
+                </div>
+                <!-- Barrier Details Panel (Hidden by default, populated dynamically) -->
+                <div class="barrier-drawer" id="barrier-drawer">
+                    <div class="drawer-header">
+                        <div class="drawer-title-group">
+                            <div class="drawer-icon-circle" id="drawer-icon-circle">
+                                <i data-lucide="shield-alert" id="drawer-icon"></i>
+                            </div>
+                            <div>
+                                <h4 class="drawer-title" id="drawer-title">Fear of Diagnosis</h4>
+                                <span class="drawer-subtitle">Psychological Avoidance Profile</span>
+                            </div>
+                        </div>
+                        <button class="drawer-close" id="drawer-close" aria-label="Close drawer">
+                            <i data-lucide="x"></i>
+                        </button>
+                    </div>
+                    <div class="drawer-body">
+                        <div class="drawer-content-left">
+                            <h5>Why This Happens</h5>
+                            <p id="drawer-description">Fear is a core survival response. In healthcare, this manifests as *information avoidance*. People skip tests because they sub-consciously prefer the uncertainty over a confirmed diagnosis, falsely believing they are delaying the illness itself.</p>
+                        </div>
+                        <div class="drawer-content-right">
+                            <div class="action-card">
+                                <h6>Overcoming the Barrier</h6>
+                                <p id="drawer-tip">Focus on control: Knowing early puts you in the driver's seat. Early-stage issues are far more treatable, less costly, and less disruptive than late-stage emergencies.</p>
+                                <div class="action-quote">
+                                    <span class="quote-symbol">“</span>
+                                    <span id="drawer-quote">Knowledge isn't a sentence. It is the roadmap to reclaiming your power.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Interactive Barrier Discovery Quiz & Health Readiness Meter -->
+        <section id="quiz" class="quiz-section">
+            <div class="container quiz-wrapper">
+                <div class="section-header">
+                    <span class="section-subtitle">SELF ASSESSMENT</span>
+                    <h2 class="section-title">Let's Understand What's Holding You Back</h2>
+                    <p class="section-desc">Take this short diagnostic assessment to identify your primary emotional or psychological barrier and view your personalized health readiness details.</p>
+                </div>
+                <div class="quiz-card" id="quiz-card">
+                    <!-- Progress Bar Header -->
+                    <div class="quiz-progress-bar-container">
+                        <div class="quiz-progress-labels">
+                            <span class="quiz-step-indicator" id="quiz-step-indicator">Question 1 of 3</span>
+                            <span class="quiz-percent" id="quiz-percent">33% Complete</span>
+                        </div>
+                        <div class="quiz-progress-track">
+                            <div class="quiz-progress-fill" id="quiz-progress-fill" style="width: 33%;"></div>
+                        </div>
+                    </div>
+                    <!-- Quiz Content Frame -->
+                    <div class="quiz-content" id="quiz-content">
+                        <!-- Step 1 (Rendered dynamically by JS) -->
+                        <div class="quiz-step active" id="step-1">
+                            <h3 class="quiz-question">How long have you delayed addressing your concern?</h3>
+                            <div class="quiz-options">
+                                <button class="quiz-opt-btn" data-value="few-days">
+                                    <span class="opt-letter">A</span>
+                                    <span class="opt-text">A few days</span>
+                                    <i data-lucide="chevron-right" class="opt-chevron"></i>
+                                </button>
+                                <button class="quiz-opt-btn" data-value="few-weeks">
+                                    <span class="opt-letter">B</span>
+                                    <span class="opt-text">A few weeks</span>
+                                    <i data-lucide="chevron-right" class="opt-chevron"></i>
+                                </button>
+                                <button class="quiz-opt-btn" data-value="several-months">
+                                    <span class="opt-letter">C</span>
+                                    <span class="opt-text">Several months</span>
+                                    <i data-lucide="chevron-right" class="opt-chevron"></i>
+                                </button>
+                                <button class="quiz-opt-btn" data-value="more-year">
+                                    <span class="opt-letter">D</span>
+                                    <span class="opt-text">More than a year</span>
+                                    <i data-lucide="chevron-right" class="opt-chevron"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Loading Screen Overlay (Hidden by default) -->
+                    <div class="quiz-loader-screen hidden" id="quiz-loader">
+                        <div class="spinner-container">
+                            <div class="spinner"></div>
+                            <h3 class="loader-title">Analyzing Your Behavioral Profile...</h3>
+                            <p class="loader-subtitle">Evaluating hesitation thresholds and mental roadblocks.</p>
+                        </div>
+                    </div>
+                    <!-- Results Section (Hidden by default) -->
+                    <div class="quiz-results-screen hidden" id="quiz-results">
+                        <div class="results-layout">
+                            <div class="results-profile">
+                                <div class="badge-result" id="barrier-result-badge">FEAR-BASED AVOIDANCE</div>
+                                <h3 class="results-title" id="barrier-result-title">Fear-Based Avoidance</h3>
+                                <p class="results-desc" id="barrier-result-desc">Your results suggest that anxiety about diagnoses and the stress of medical updates is your main hurdle. It is common to feel this way, but avoidance keeps your stress levels high in the long term.</p>
+                                
+                                <div class="action-steps">
+                                    <h4>Your Step-By-Step Guidance</h4>
+                                    <ul class="action-steps-list" id="barrier-action-list">
+                                        <li>Bring a trusted supporter with you to appointments to anchor you.</li>
+                                        <li>Write down questions beforehand so you don't panic or freeze.</li>
+                                        <li>Choose providers who specialize in patient comfort and validation.</li>
+                                    </ul>
+                                </div>
+                                <button class="btn btn-secondary btn-sm" id="btn-restart-quiz">
+                                    <i data-lucide="rotate-ccw"></i> Retake Assessment
+                                </button>
+                            </div>
+                            <!-- Health Readiness Meter -->
+                            <div class="results-meter-panel">
+                                <h4 class="meter-title">Your Health Readiness Score</h4>
+                                
+                                <div class="meter-visual">
+                                    <svg class="meter-svg" viewBox="0 0 200 200">
+                                        <!-- Background Circle -->
+                                        <circle class="meter-bg" cx="100" cy="100" r="85" fill="none" stroke-width="12" />
+                                        <!-- Fill Circle -->
+                                        <circle class="meter-fill" id="meter-fill-circle" cx="100" cy="100" r="85" fill="none" stroke-width="12" stroke-dasharray="534" stroke-dashoffset="534" />
+                                    </svg>
+                                    <div class="meter-score-text">
+                                        <span class="score-num" id="meter-score-num">0</span>
+                                        <span class="score-max">/100</span>
+                                    </div>
+                                </div>
+                                <div class="meter-feedback">
+                                    <p class="feedback-highlight" id="meter-feedback-text">"You are closer to taking action than you think."</p>
+                                    <p class="feedback-sub">This score measures your current psychological readiness to engage with a medical professional. A higher score means less internal friction.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Future Impact Simulator Section -->
+        <section id="simulator" class="simulator-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">BEHAVIORAL SIMULATION</span>
+                    <h2 class="section-title">What Happens Next?</h2>
+                    <p class="section-desc">Drag the simulator slider to see how simple choices expand into radically different futures. Explore outcomes without the fear-mongering.</p>
+                </div>
+                <!-- Dynamic Comparison Screen -->
+                <div class="simulator-layout">
+                    <!-- Left: Timeline Path A (Ignore) -->
+                    <div class="timeline-path path-ignore" id="path-ignore">
+                        <div class="path-badge label-ignore">PATH A: IGNORE SYMPTOMS</div>
+                        <div class="timeline-items">
+                            <div class="timeline-item" data-time="1">
+                                <div class="time-marker">Day 1</div>
+                                <div class="time-content">
+                                    <h4>Persistent Discomfort</h4>
+                                    <p>You notice a recurring issue but dismiss it as general fatigue or stress.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item" data-time="30">
+                                <div class="time-marker">Month 1</div>
+                                <div class="time-content">
+                                    <h4>Growing Mental Load</h4>
+                                    <p>Anxiety increases. You start spending hours doing Google symptom searches late at night.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item" data-time="90">
+                                <div class="time-marker">Month 3</div>
+                                <div class="time-content">
+                                    <h4>Compounded Cost Risk</h4>
+                                    <p>Minor problems escalate. An emergency or specialist visit becomes unavoidable.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item" data-time="180">
+                                <div class="time-marker">Month 6</div>
+                                <div class="time-content">
+                                    <h4>Delayed Recovery</h4>
+                                    <p>Treatment is more complex and recovery takes weeks instead of a single quick checkup.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Right: Timeline Path B (Action) -->
+                    <div class="timeline-path path-action" id="path-action">
+                        <div class="path-badge label-action">PATH B: TAKE ACTION TODAY</div>
+                        <div class="timeline-items">
+                            <div class="timeline-item" data-time="1">
+                                <div class="time-marker">Day 1</div>
+                                <div class="time-content">
+                                    <h4>Simple Clarification</h4>
+                                    <p>You spend 10 minutes scheduling a clinic visit or quick virtual consult.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item" data-time="30">
+                                <div class="time-marker">Month 1</div>
+                                <div class="time-content">
+                                    <h4>Absolute Peace of Mind</h4>
+                                    <p>A health professional clarifies your health profile. The background anxiety disappears.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item" data-time="90">
+                                <div class="time-marker">Month 3</div>
+                                <div class="time-content">
+                                    <h4>Early & Simple Resolution</h4>
+                                    <p>If anything was found, simple lifestyle shifts or minor treatments resolve it easily.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item" data-time="180">
+                                <div class="time-marker">Month 6</div>
+                                <div class="time-content">
+                                    <h4>High Vitality & Confidence</h4>
+                                    <p>Your health is optimized, your budget is protected, and you feel in control of your life.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Simulation Slider Controller -->
+                <div class="simulator-controls">
+                    <div class="slider-labels">
+                        <span>Path A (Ignore)</span>
+                        <span class="active-slider-val" id="slider-split-label">Balanced Outlook</span>
+                        <span>Path B (Action)</span>
+                    </div>
+                    <div class="slider-wrapper">
+                        <input type="range" min="0" max="100" value="50" class="sim-slider" id="sim-slider" aria-label="Compare timelines">
+                        <div class="slider-track-highlight"></div>
+                    </div>
+                    <p class="slider-hint">Drag the slider left or right to emphasize each path's trajectory.</p>
+                </div>
+            </div>
+        </section>
+        <!-- Anonymous Health Companion Chat Section -->
+        <section id="companion" class="companion-section">
+            <div class="container companion-layout">
+                <div class="companion-sidebar">
+                    <span class="section-subtitle">SAFE SPACE</span>
+                    <h2 class="sidebar-title">Meet Your Health Companion</h2>
+                    <p class="sidebar-desc">Need a sounding board? Talk through your hesitations without judgment. This companion is an interactive chat simulator designed to explore healthcare barriers, answer common concerns, and build emotional confidence.</p>
+                    
+                    <div class="companion-safety">
+                        <div class="safety-icon-wrapper">
+                            <i data-lucide="lock"></i>
+                        </div>
+                        <div>
+                            <h6>Fully Anonymous</h6>
+                            <p>No health data is saved or sent to any server. Your answers are private to this window.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Chat Interface -->
+                <div class="chat-card">
+                    <div class="chat-header">
+                        <div class="chat-status-dot"></div>
+                        <div class="chat-profile-info">
+                            <span class="chat-name">Health Companion</span>
+                            <span class="chat-desc">Behavioral Support Bot</span>
+                        </div>
+                        <div class="chat-header-actions">
+                            <button class="chat-header-btn" id="btn-clear-chat" aria-label="Clear chat">
+                                <i data-lucide="trash-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="chat-feed" id="chat-feed">
+                        <!-- Greeting Message -->
+                        <div class="chat-message bot-message">
+                            <div class="chat-message-text">
+                                Hello! I'm here to support you in overcoming whatever stops you from addressing your health. How are you feeling about seeking care?
+                            </div>
+                            <span class="chat-message-time">Just now</span>
+                        </div>
+                        <!-- Bouncing dots (hidden by default) -->
+                        <div class="chat-message bot-message typing-indicator hidden" id="chat-typing-indicator">
+                            <div class="typing-dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Chat Inputs -->
+                    <div class="chat-inputs">
+                        <!-- Quick Reply Pills -->
+                        <div class="chat-pills" id="chat-pills">
+                            <button class="chat-pill" data-prompt="scared">I'm scared</button>
+                            <button class="chat-pill" data-prompt="time">I don't have time</button>
+                            <button class="chat-pill" data-prompt="expensive">It may be expensive</button>
+                            <button class="chat-pill" data-prompt="embarrassed">I feel embarrassed</button>
+                        </div>
+                        
+                        <!-- Text Input Form -->
+                        <form class="chat-form" id="chat-form">
+                            <input type="text" class="chat-input" id="chat-input" placeholder="Type your concerns anonymously..." autocomplete="off">
+                            <button type="submit" class="btn-chat-send" id="btn-chat-send" aria-label="Send message">
+                                <i data-lucide="send"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Wall of Excuses Interactive Section -->
+        <section id="excuses" class="excuses-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">BREAK THROUGH</span>
+                    <h2 class="section-title">Break Through The Barrier</h2>
+                    <p class="section-desc">Hesitations are built of mental blocks. Click on each block below to break it down and see what lies behind your barriers.</p>
+                </div>
+                <div class="excuses-wrapper">
+                    <!-- Stat Bar -->
+                    <div class="excuses-status-bar">
+                        <span>Excuses Remaining: <strong id="excuses-counter">6</strong></span>
+                        <button class="btn btn-secondary btn-xs" id="btn-reset-wall">Reset Wall</button>
+                    </div>
+                    <!-- Wall Grid -->
+                    <div class="wall-grid" id="wall-grid">
+                        <div class="excuse-brick brick-fear" data-excuse="fear">
+                            <span class="brick-text">FEAR</span>
+                            <span class="brick-detail">"It might be serious..."</span>
+                        </div>
+                        <div class="excuse-brick brick-cost" data-excuse="cost">
+                            <span class="brick-text">COST</span>
+                            <span class="brick-detail">"Doctors cost too much..."</span>
+                        </div>
+                        <div class="excuse-brick brick-time" data-excuse="time">
+                            <span class="brick-text">TIME</span>
+                            <span class="brick-detail">"I'll go next month..."</span>
+                        </div>
+                        <div class="excuse-brick brick-stigma" data-excuse="stigma">
+                            <span class="brick-text">STIGMA</span>
+                            <span class="brick-detail">"Seeking therapy is weak..."</span>
+                        </div>
+                        <div class="excuse-brick brick-doubt" data-excuse="doubt">
+                            <span class="brick-text">DOUBT</span>
+                            <span class="brick-detail">"It'll probably go away..."</span>
+                        </div>
+                        <div class="excuse-brick brick-proc" data-excuse="procrastination">
+                            <span class="brick-text">PROCRASTINATION</span>
+                            <span class="brick-detail">"I'm too busy today..."</span>
+                        </div>
+                    </div>
+                    <!-- Success Resolution Banner (Hidden by default) -->
+                    <div class="wall-success-banner hidden" id="wall-success-banner">
+                        <div class="success-icon-wrapper">
+                            <i data-lucide="check-circle-2"></i>
+                        </div>
+                        <h3 class="success-banner-title">The barrier wasn't healthcare. <br>The barrier was hesitation.</h3>
+                        <p class="success-banner-desc">By breaking down each excuse, you open the door to a healthier, more confident life. You are ready to take control.</p>
+                        <a href="#quiz" class="btn btn-primary btn-sm">Take Your First Step</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Daily Courage Challenge Section -->
+        <section id="challenge" class="challenge-section">
+            <div class="container">
+                <div class="challenge-card-layout">
+                    <div class="challenge-visual">
+                        <div class="courage-shield-wrapper">
+                            <i data-lucide="shield-check" class="shield-main-icon"></i>
+                            <div class="courage-pulse-rings">
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="total-courage-box">
+                            <span class="courage-score-val" id="challenge-courage-points">0</span>
+                            <span class="courage-score-lbl">Total Courage Points</span>
+                        </div>
+                    </div>
+                    <div class="challenge-content-panel">
+                        <span class="challenge-tag">DAILY COURAGE CHALLENGE</span>
+                        <h2 class="challenge-heading">One Small Step Today</h2>
+                        <p class="challenge-description">Behavioral science shows that taking tiny, low-stakes actions builds momentum to face larger anxieties. Perform today's challenge to build your courage reservoir.</p>
+                        
+                        <!-- Interactive Task Widget -->
+                        <div class="challenge-widget-box" id="challenge-box">
+                            <div class="challenge-widget-header">
+                                <span class="challenge-day-lbl">TODAY'S CHALLENGE</span>
+                                <span class="challenge-reward-lbl">+50 Courage Points</span>
+                            </div>
+                            <div class="challenge-widget-body">
+                                <h3 class="challenge-task-title" id="challenge-task-text">Write down your top three physical symptoms in a private journal.</h3>
+                                <p class="challenge-task-sub">You don't need to book an appointment. Just externalizing your concerns on paper breaks the cycle of denial.</p>
+                            </div>
+                            <div class="challenge-widget-footer">
+                                <button class="btn btn-primary btn-wide" id="btn-complete-challenge">
+                                    <i data-lucide="check" class="complete-btn-icon"></i> I Completed Today's Challenge
+                                </button>
+                                <div class="challenge-completed-state hidden" id="challenge-completed-state">
+                                    <i data-lucide="sparkles"></i> Completed! You earned 50 Courage Points!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Impact Statistics Section -->
+        <section id="stats" class="stats-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">THE DATA SAYS</span>
+                    <h2 class="section-title">The Real Cost of Delaying Care</h2>
+                    <p class="section-desc">These metrics illustrate how psychological hesitation impacts our health systems, families, and personal wellbeing.</p>
+                </div>
+                <div class="stats-grid">
+                    <!-- Stat Card 1 -->
+                    <div class="stat-card">
+                        <div class="stat-icon-circle" style="background-color: #FFE5E5; color: #E84A5F;">
+                            <i data-lucide="alert-triangle"></i>
+                        </div>
+                        <div class="stat-number-wrapper">
+                            <span class="stat-number" data-target="80">0</span><span class="stat-unit">%</span>
+                        </div>
+                        <p class="stat-label">People who admit they delay seeking care despite recognizing physical warnings.</p>
+                    </div>
+                    <!-- Stat Card 2 -->
+                    <div class="stat-card">
+                        <div class="stat-icon-circle" style="background-color: #E6F9F2; color: #4ECDC4;">
+                            <i data-lucide="heart"></i>
+                        </div>
+                        <div class="stat-number-wrapper">
+                            <span class="stat-number" data-target="90">0</span><span class="stat-unit">%</span>
+                        </div>
+                        <p class="stat-label">Survival rate increase for common chronic ailments when diagnosed in Stage 1.</p>
+                    </div>
+                    <!-- Stat Card 3 -->
+                    <div class="stat-card">
+                        <div class="stat-icon-circle" style="background-color: #E8F4FD; color: #5B8DEF;">
+                            <i data-lucide="trending-down"></i>
+                        </div>
+                        <div class="stat-number-wrapper">
+                            <span class="stat-number" data-target="4.8">0</span><span class="stat-unit">x</span>
+                        </div>
+                        <p class="stat-label">Reduction in medical expenses when health concerns are managed preventively.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Final CTA Section -->
+        <section class="cta-banner-section">
+            <div class="container">
+                <div class="cta-banner">
+                    <h2 class="cta-banner-title">Your Future Self Will Thank You</h2>
+                    <p class="cta-banner-desc">The hardest step is often the first one. Understanding your barriers today can help you make healthier, more confident decisions tomorrow.</p>
+                    <a href="#quiz" class="btn btn-primary btn-large btn-white" id="final-cta-btn">Start My Health Journey</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="#" class="nav-logo">
+                    <span class="logo-icon">?</span>
+                    <span class="logo-text">Why<span class="highlight">Not?</span></span>
+                </a>
+                <p class="footer-tagline">"The barrier isn't healthcare. It's what stops people from using it."</p>
+                <div class="footer-socials">
+                    <a href="#" class="social-icon" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                    <a href="#" class="social-icon" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                    <a href="#" class="social-icon" aria-label="GitHub"><i data-lucide="github"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>About the Project</h4>
+                <ul>
+                    <li><a href="#">Initiative Goals</a></li>
+                    <li><a href="#">Behavioral Design Approach</a></li>
+                    <li><a href="#">Healthcare Partners</a></li>
+                    <li><a href="#">Press Kit</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">Preventive Care 101</a></li>
+                    <li><a href="#">Finding Clinic Resources</a></li>
+                    <li><a href="#">Mental Health Advocacy</a></li>
+                    <li><a href="#">Crisis Hotlines</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact & Feedback</h4>
+                <p>Support the initiative or send feedback about your barrier discovery journey.</p>
+                <p class="contact-email">hello@whynot-initiative.org</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container footer-bottom-flex">
+                <p>&copy; 2026 WhyNot? Healthcare Awareness Initiative. All rights reserved.</p>
+                <p class="medical-disclaimer">Disclaimer: This site is for educational/behavioral research purposes. It does not provide medical diagnoses or treatment recommendations.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Custom Script -->
+    <script src="app.js"></script>
+</body>
+</html>
